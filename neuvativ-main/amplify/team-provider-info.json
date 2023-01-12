@@ -1,0 +1,138 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-neuvativ-dev-231918-authRole",
+      "UnauthRoleArn": "arn:aws:iam::788792171177:role/amplify-neuvativ-dev-231918-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::788792171177:role/amplify-neuvativ-dev-231918-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+      "UnauthRoleName": "amplify-neuvativ-dev-231918-unauthRole",
+      "StackName": "amplify-neuvativ-dev-231918",
+      "StackId": "arn:aws:cloudformation:us-east-1:788792171177:stack/amplify-neuvativ-dev-231918/b8de9b80-1ab6-11ed-b9f0-126f2a3da8ef",
+      "AmplifyAppId": "d3jfhdwguila2k",
+      "AuthTriggerTemplateURL": "https://s3.amazonaws.com/amplify-neuvativ-dev-231918-deployment/amplify-cfn-templates/auth/auth-trigger-cloudformation-template.json"
+    },
+    "categories": {
+      "auth": {
+        "userPoolGroups": {},
+        "tsaroAuth": {}
+      },
+      "function": {
+        "tsaroAuthPostAuthentication": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPostAuthentication-3648694b476367534a69-build.zip",
+          "awsAccountId": "788792171177",
+          "userPoolId": "us-east-1_3WRGG33xp",
+          "usertable": "User-u2ogbrpxdndzvg766iooo6xtxq-dev",
+          "dashId": "864ae0f8-cdfb-49d5-b896-fa41281119c1",
+          "roleName": "tsaroAuthPostAuthentication-dev",
+          "roleArn": "arn:aws:iam::788792171177:role/tsaroAuthPostAuthentication-dev"
+        },
+        "urlDashboardUpdate": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/urlDashboardUpdate-6e547977442b4e392b42-build.zip",
+          "awsAccountId": "788792171177",
+          "dashId": "864ae0f8-cdfb-49d5-b896-fa41281119c1",
+          "roleArn": "arn:aws:iam::788792171177:role/tsaroAuthPostAuthentication-dev",
+          "roleName": "tsaroAuthPostAuthentication-dev"
+        },
+        "tsaroAuthPostConfirmation": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPostConfirmation-754f416f4b6336616b42-build.zip",
+          "userPoolId": "us-east-1_3WRGG33xp",
+          "tableName": "SigUpCodeTable-u2ogbrpxdndzvg766iooo6xtxq-dev"
+        },
+        "tsaroAuthPreSignup": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPreSignup-6e36765a544968444f65-build.zip",
+          "tableName": "SigUpCodeTable-u2ogbrpxdndzvg766iooo6xtxq-dev"
+        },
+        "subscribeToAlerts": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/subscribeToAlerts-6d7054484e5563766c79-build.zip",
+          "userPoolId": "us-east-1_3WRGG33xp",
+          "awsAccountId": "788792171177",
+          "usertable": "User-u2ogbrpxdndzvg766iooo6xtxq-dev"
+        },
+        "sendSignalNotification": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/sendSignalNotification-743750466e77382b3156-build.zip",
+          "awsAccountId": "788792171177"
+        },
+        "calibrationVariablesTopicPubSub": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/calibrationVariablesTopicPubSub-433752426a4f504b7434-build.zip",
+          "endportPrefix": "a1g1fqw1hapg2y"
+        },
+        "updateAlertStatus": {
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/updateAlertStatus-323544707430454e3470-build.zip",
+          "usertable": "User-u2ogbrpxdndzvg766iooo6xtxq-dev",
+          "awsAccountId": "788792171177"
+        },
+        "publishAlerts": {
+          "awsAccountId": "788792171177",
+          "deploymentBucketName": "amplify-neuvativ-dev-231918-deployment",
+          "s3Key": "amplify-builds/publishAlerts-6e67334c347939783436-build.zip"
+        }
+      }
+    }
+  },
+  "mig": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-neuvativ-mig-101136-authRole",
+      "UnauthRoleArn": "arn:aws:iam::788792171177:role/amplify-neuvativ-mig-101136-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::788792171177:role/amplify-neuvativ-mig-101136-authRole",
+      "Region": "us-east-1",
+      "DeploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+      "UnauthRoleName": "amplify-neuvativ-mig-101136-unauthRole",
+      "StackName": "amplify-neuvativ-mig-101136",
+      "StackId": "arn:aws:cloudformation:us-east-1:788792171177:stack/amplify-neuvativ-mig-101136/c6a12dd0-77d3-11ed-8480-0a3b4282c6bf",
+      "AmplifyAppId": "d3jfhdwguila2k"
+    },
+    "categories": {
+      "auth": {
+        "userPoolGroups": {},
+        "tsaroAuth": {}
+      },
+      "function": {
+        "subscribeToAlerts": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/subscribeToAlerts-6d7054484e5563766c79-build.zip"
+        },
+        "sendSignalNotification": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/sendSignalNotification-743750466e77382b3156-build.zip"
+        },
+        "calibrationVariablesTopicPubSub": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/calibrationVariablesTopicPubSub-433752426a4f504b7434-build.zip"
+        },
+        "updateAlertStatus": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/updateAlertStatus-323544707430454e3470-build.zip"
+        },
+        "tsaroAuthPostAuthentication": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPostAuthentication-3648694b476367534a69-build.zip"
+        },
+        "urlDashboardUpdate": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/urlDashboardUpdate-6e547977442b4e392b42-build.zip"
+        },
+        "tsaroAuthPostConfirmation": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPostConfirmation-754f416f4b6336616b42-build.zip"
+        },
+        "tsaroAuthPreSignup": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/tsaroAuthPreSignup-6e36765a544968444f65-build.zip"
+        },
+        "publishAlerts": {
+          "deploymentBucketName": "amplify-neuvativ-mig-101136-deployment",
+          "s3Key": "amplify-builds/publishAlerts-6e67334c347939783436-build.zip"
+        }
+      }
+    }
+  }
+}

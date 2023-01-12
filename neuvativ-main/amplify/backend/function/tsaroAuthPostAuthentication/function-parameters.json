@@ -1,0 +1,43 @@
+{
+  "trigger": true,
+  "modules": [
+    "custom"
+  ],
+  "parentResource": "tsaroAuth",
+  "functionName": "tsaroAuthPostAuthentication",
+  "resourceName": "tsaroAuthPostAuthentication",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "C:\\snapshot\\repo\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PostAuthentication",
+  "triggerTemplate": "PostAuthentication.json.ejs",
+  "triggerEventPath": "PostAuthentication.event.json",
+  "roleName": "tsaroAuthPostAuthentication",
+  "skipEdit": true,
+  "enableCors": false,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "awsAccountId",
+      "environmentVariableName": "AwsAccountId"
+    },
+    {
+      "cloudFormationParameterName": "userPoolId",
+      "environmentVariableName": "userPoolId"
+    },
+    {
+      "cloudFormationParameterName": "usertable",
+      "environmentVariableName": "USERTABLE"
+    },
+    {
+      "cloudFormationParameterName": "dashId",
+      "environmentVariableName": "DashId"
+    },
+    {
+      "cloudFormationParameterName": "roleName",
+      "environmentVariableName": "RoleName"
+    },
+    {
+      "cloudFormationParameterName": "roleArn",
+      "environmentVariableName": "RoleArn"
+    }
+  ]
+}

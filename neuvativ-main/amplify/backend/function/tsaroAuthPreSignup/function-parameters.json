@@ -1,0 +1,24 @@
+{
+  "trigger": true,
+  "modules": [
+    "email-filter-allowlist"
+  ],
+  "parentResource": "tsaroAuth",
+  "functionName": "tsaroAuthPreSignup",
+  "resourceName": "tsaroAuthPreSignup",
+  "parentStack": "auth",
+  "triggerEnvs": "[]",
+  "triggerDir": "C:\\snapshot\\repo\\build\\node_modules\\@aws-amplify\\amplify-category-auth\\provider-utils\\awscloudformation\\triggers\\PreSignup",
+  "triggerTemplate": "PreSignup.json.ejs",
+  "triggerEventPath": "PreSignup.event.json",
+  "roleName": "tsaroAuthPreSignup",
+  "skipEdit": true,
+  "DOMAINALLOWLIST": "'sofia.guzman@mohawkcollege.ca,sofyguzmanen@gmail.com'",
+  "enableCors": false,
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "tableName",
+      "environmentVariableName": "TableName"
+    }
+  ]
+}

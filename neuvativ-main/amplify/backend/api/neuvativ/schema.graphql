@@ -1,0 +1,106 @@
+# This "input" configures a global authorization rule to enable public access to
+# all models in this schema. Learn more about authorization rules here: https://docs.amplify.aws/cli/graphql/authorization-rules
+# input AMPLIFY { globalAuthRule: AuthRule = { allow: public } } # FOR TESTING ONLY!
+
+type Project @model 
+@auth(rules:[
+   {allow:groups, groups: ["Admin","ElevatorCompany","BuildingManager","Guest"]},
+ ]) {
+  id: ID!
+  projectId: String
+  projectCreationDate: AWSDate
+  projectOwnerName: String
+  projectOwnerStNo: String
+  projectOwnerStName:String
+  projectOwnerCity:String
+  projectOwnerState:String
+  projectOwnerPostalCode:String
+  projectOwnerAccountNo:String
+  projectLocationofElevatingDevice:String
+  projectElevatorContractor:String
+  projectElevatorConsultant:String
+  projectEC: String @index(name: "projectECIndex", queryField:"projectByEC")
+  projectBM: String @index(name: "projectBMIndex", queryField:"projectByBM")
+  projectGuest: [GuestCode] @manyToMany(relationName:"projectGuestGuestCode")
+  projectElevatorInfo:String
+}
+
+type GuestCode @model 
+@auth(rules:[
+   {allow:groups, groups: ["Admin","ElevatorCompany","BuildingManager","Guest"]},
+ ]) {
+  id: ID!
+  code: String @index(name: "guestCodeCodeIndex", queryField:"guestCodeByCode")
+  guestCode: [Project] @manyToMany(relationName:"projectGuestGuestCode"),
+}
+
+type SigUpCodeTable @model 
+@auth(rules:[
+   {allow:groups, groups: ["Admin","ElevatorCompany","BuildingManager","Guest"]},
+ ]) {
+  id: ID!
+  SignUpGroup: String
+  SignUpCode: String
+  CurrentlyAvailableCodes: [String]
+  AssignedCodes: [String]
+}
+
+type User @model
+ @auth(rules:[
+   {allow:groups, groups: ["Admin","ElevatorCompany","BuildingManager","Guest"]},
+   {allow:owner, ownerField: "username"}
+ ]) {
+     id: ID!
+     username:String!
+     email:String!
+     preferred_username: String!
+     registration_code: String!
+     group: String! @index(name: "userTypeIndex", queryField:"userByGroup")
+     sheetInformation: String 
+     embededUrl: String
+     subscriptions: [String]
+     pending_subscriptions: [String]
+ }
+
+
+type Query {
+  listUrls: [UpdateUrl] @function(name: "urlDashboardUpdate-${env}")
+  getUrl(id:ID!, email: String!): UpdateUrl @function(name: "urlDashboardUpdate-${env}")
+  
+  getListOfAlerts : [Alerts] @function(name: "subscribeToAlerts-${env}")
+  getAlertById(elevator_id: String!, project_id: String!, signal_type: String, email: String, userName: String, action: String): Alerts @function(name: "subscribeToAlerts-${env}")
+  
+  updateSubscriptionsByUser(id: ID! email: String, userName: String): User @function(name: "updateAlertStatus-${env}")
+
+}
+ 
+type Mutation {
+  createCalVarPubSubMsg(projectId: String!, elevatorId: String!, calibrationValue: String!): CalVarPubSub @function(name: "calibrationVariablesTopicPubSub-${env}")
+}
+
+type CalVarPubSub {
+  projectId: String!
+  elevatorId: String!
+  calibrationValue: String!
+}
+
+type Alerts @model
+@auth(rules:[
+   {allow:groups, groups: ["Admin","ElevatorCompany","BuildingManager","Guest"]},
+ ]) {
+  id: ID! @primaryKey(sortKeyFields: ["project_id", "elevator_id"])
+  elevator_id: String! 
+  project_id: String!
+  status: String
+  signal_type: String!
+  alert_type: String!
+  alert_message: String!
+
+}
+
+
+type UpdateUrl {
+   id: ID!
+   data: String!
+   email: String!
+}

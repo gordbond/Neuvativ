@@ -1,0 +1,9 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "endportPrefix",
+      "environmentVariableName": "endport_prefix"
+    }
+  ]
+}

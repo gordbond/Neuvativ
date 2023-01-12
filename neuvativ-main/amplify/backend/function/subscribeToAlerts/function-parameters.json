@@ -1,0 +1,17 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "userPoolId",
+      "environmentVariableName": "userPoolId"
+    },
+    {
+      "cloudFormationParameterName": "awsAccountId",
+      "environmentVariableName": "AwsAccountId"
+    },
+    {
+      "cloudFormationParameterName": "usertable",
+      "environmentVariableName": "USERTABLE"
+    }
+  ]
+}

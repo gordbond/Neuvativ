@@ -1,0 +1,21 @@
+{
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "awsAccountId",
+      "environmentVariableName": "AwsAccountId"
+    },
+    {
+      "cloudFormationParameterName": "dashId",
+      "environmentVariableName": "DashId"
+    },
+    {
+      "cloudFormationParameterName": "roleArn",
+      "environmentVariableName": "RoleArn"
+    },
+    {
+      "cloudFormationParameterName": "roleName",
+      "environmentVariableName": "RoleName"
+    }
+  ]
+}

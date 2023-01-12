@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "storage": {
+      "Alerts:@model(appsync)": [
+        "read",
+        "update"
+      ]
+    }
+  },
+  "lambdaLayers": [],
+  "environmentVariableList": [
+    {
+      "cloudFormationParameterName": "awsAccountId",
+      "environmentVariableName": "AwsAccountId"
+    }
+  ]
+}
