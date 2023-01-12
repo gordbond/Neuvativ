@@ -63,9 +63,7 @@ function ProjectTableStatus() {
             let userData = await API.graphql(graphqlOperation(queries.getUser, { id: tempUserConnected }));
             let pref_username = userData?.data?.getUser?.preferred_username;
             let reg_code = userData?.data?.getUser?.registration_code;
-            console.log("reg_code", reg_code)
             const tempUserGroup = Auth?.user?.signInUserSession?.idToken?.payload['cognito:groups']
-            console.log("tempUserGroup:", tempUserGroup[0])
             setUserConnected(pref_username)
 
             //PP: if the usergroup is Admin
@@ -97,7 +95,6 @@ function ProjectTableStatus() {
                             try {
                                 let CodeData = await API.graphql(graphqlOperation(queries.guestCodeByCode, { code: reg_code }));
                                 idGuestCodes = CodeData?.data?.guestCodeByCode?.items;
-                                console.log("idGuestCodes", idGuestCodes, listOfProjects);
                                 mapping(idGuestCodes);
                                 sorting(listOfProjects, "Guest");
                             } catch (error) {
@@ -172,7 +169,6 @@ function ProjectTableStatus() {
      */
     function tempprojectSort(tempProjects, sortcat, status, type) {
         // PP: if sorting is done to be in ascending order
-        console.log("function:" + type);
         if (type === "Ascending") {
             if (sortcat === "numOfElev") {
                 // PP: sorting
