@@ -48,6 +48,7 @@ function ProjectTableStatus() {
      */
 
     function sorting(listOfProjects, userName) {
+        //GB: This code can be moved to the handleSort
         listOfProjects.sort((a, b) => new Date(b["projectCreationDate"]) - new Date(a["projectCreationDate"]))
         if (userName === "Admin" || userName === "Guest") {
             setProjects(listOfProjects)
@@ -109,6 +110,7 @@ function ProjectTableStatus() {
             }
 
             //PP: Get critical alerts
+            //GB: Example of my detailed documentation: Retrieve a list of alerts then filter and return only the CRITICAL ALERTS
             let alertsReturned = await API.graphql(graphqlOperation(queries.listAlerts, {
                 filter: {
                     status: {
@@ -147,6 +149,7 @@ function ProjectTableStatus() {
         }
     }, [projects])
     //PP: it will handle the view details
+    //GB: Example of my detailed documentation: When the View Details button is clicked the user is navigated to the project details page for the specific project
     let handleViewDetails = (e, data) => {
         navigate('/iot-devices-current-iot-projects/projects-details', {
             state: JSON.stringify(data)
@@ -234,11 +237,13 @@ function ProjectTableStatus() {
 
     }
     //PP: Sorts projects by category - ASCENDING or descending
+    //GB If you are going to use this to do a more generalized sort
+    //you will probably need to have a parameter for the array as well
     const handleSort = (sortCat, type) => {
-
-        const tempProjects = [...projects]
+            
+        const tempProjects = [...projects] //GB: use a parameter for this instead
         if (sortCat === "projectCreationDate") {
-            tempProjects.sort((a, b) => new Date(a[sortCat]) - new Date(b[sortCat]))
+            tempProjects.sort((a, b) => new Date(a[sortCat]) - new Date(b[sortCat]))//GB: This sorts desc also need an asc option
         } else if (sortCat === "numOfElev") {
             tempprojectSort(tempProjects, "numOfElev", "", type);
         }
@@ -273,7 +278,7 @@ function ProjectTableStatus() {
 
 
         }
-        setProjects(tempProjects)
+        setProjects(tempProjects)//GB: This might need removed and added below where the function is called
     }
 
 
